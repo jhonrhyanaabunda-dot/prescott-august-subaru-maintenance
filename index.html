@@ -501,6 +501,13 @@
     display: block;
   }
 
+  /* Fallback: browsers without aspect-ratio support (Safari/iOS < 15) collapse
+     .full-img to zero height, which hides the body photos entirely. */
+  @supports not (aspect-ratio: 16 / 9) {
+    .full-img { height: auto; padding-top: 56.25%; }
+  }
+
+
   /* ---------- Callout block ---------- */
   .awd-callout {
     margin: 32px 0 40px;
